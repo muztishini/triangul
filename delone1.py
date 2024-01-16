@@ -7,6 +7,7 @@ def delaunay_triangulation(points):
 	return triangulation.simplices
 
 
+# Создаем набор точек
 def read_points(file_path):
 	with open(file_path, 'r') as file:
 		pts = [tuple(map(float, point.split(','))) for line in file for point in line.strip().split(';')]
@@ -15,13 +16,8 @@ def read_points(file_path):
 
 file_path = "ishod/size_2_2.txt"
 points = read_points(file_path)
-# Создаем набор точек
-# points = np.array([[0, 0], [0, 1], [1, 0.5], [1, 1]])
+points = np.array(points)
 
-# print(points)
-
-
-# print(points)
 # Вызываем функцию
 result = delaunay_triangulation(points)
 
